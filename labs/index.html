@@ -20,7 +20,7 @@
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="/labs/">DontPayFull <small>Labs</small></a>
-  <nav><a href="https://www.dontpayfull.com">dontpayfull.com</a><a href="https://github.com/dontpayfull">GitHub</a></nav>
+  <nav><a href="https://www.dontpayfull.com">dontpayfull.com</a><a class="with-ico" href="https://github.com/dontpayfull"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#github"/></svg>GitHub</a></nav>
 </div></header>
 
 <main>
@@ -30,41 +30,71 @@
 </div>
 
 <section class="featured"><div class="wrap">
+  <h2 class="group">For AI agents and developers</h2>
   <article class="feature">
     <figure><img src="/labs/ainotate/img/dontpayfull.webp" width="1600" height="746" alt="The DontPayFull home page annotated by AInotate: step 1 on Log in, step 2 on Join now, arrows to the store search and Saving tips"></figure>
     <div class="feature-text">
-      <h2 class="head"><a href="/labs/ainotate/"><img src="/labs/ainotate/img/ainotate-logo.svg" width="202" height="48" alt="AInotate"></a></h2>
+      <h3 class="head"><a href="/labs/ainotate/"><img src="/labs/ainotate/img/ainotate-logo.svg" width="202" height="48" alt="AInotate"></a></h3>
       <p>Annotated screenshots for AI agents. Ask where a setting is and the agent sends back the screen with the button boxed and numbered.</p>
       <ul class="facts">
-        <li>MCP server, CLI and agent skill for Claude, Codex, Gemini CLI and Cursor</li>
+        <li>Works with Claude, Codex, Gemini CLI and Cursor</li>
         <li>Runs on your machine, sends nothing to us</li>
-        <li>Open source, AGPL-3.0-or-later</li>
+        <li>Free, AGPL-3.0-or-later</li>
       </ul>
       <a class="more" href="/labs/ainotate/">See AInotate</a>
     </div>
   </article>
-  <p class="next">More tools will follow on <a href="https://github.com/dontpayfull">github.com/dontpayfull</a>.</p>
 </div></section>
 
 <section class="also"><div class="wrap">
-  <h2>Also from the DontPayFull team</h2>
-  <div class="also-list">
-    <div class="also-item">
-      <h3>Shopilo browser extension</h3>
-      <p>Applies the best coupon codes automatically at checkout, at 20,000+ stores.</p>
-      <p class="stores"><a class="btn ghost" href="https://chromewebstore.google.com/detail/dontpayfull-automatic-cou/jfoanacamkbfibjbidbmeobmnndfgpca">Chrome Web Store</a> <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/dontpayfull-automatic-c/iddgmfjgflgejeafamidllamlmchohjb">Edge Add-ons</a></p>
-    </div>
-    <div class="also-item">
-      <h3>Shopilo app</h3>
-      <p>Coupon codes and deals for your favorite stores, on your phone.</p>
-      <p class="stores"><a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.shopilo.app">Google Play</a> <a class="btn ghost" href="https://apps.apple.com/app/shopilo-coupon-codes-deals/id6795835532">App Store</a></p>
-    </div>
-    <div class="also-item">
-      <h3>Amazon Shopping Tools</h3>
-      <p>A browser extension that finds discounts, deals, gift ideas and best sellers on Amazon.</p>
-      <p class="stores"><a class="btn ghost" href="https://chromewebstore.google.com/detail/amazon-shopping-tools/ffggjdmejdnacmogonkgnhihpfjadbik">Chrome</a> <a class="btn ghost" href="https://addons.mozilla.org/en-US/firefox/addon/amazon-shopping-tools/">Firefox</a> <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/amazon-shopping-tools/jfbhelnpphaoafdllliahnjcbnnlbjom">Edge</a> <a class="btn ghost" href="https://addons.opera.com/en/extensions/details/amazon-shopping-tools/">Opera</a></p>
-    </div>
+  <h2 class="group">For shoppers</h2>
+  <div class="products">
+    <article class="product">
+      <div class="product-head">
+        <img src="/labs/img/shopilo-ext.webp" width="56" height="56" alt="">
+        <div><h3>Shopilo</h3><p>Coupon codes that apply themselves.</p></div>
+      </div>
+      <div class="channel">
+        <p><strong>Browser extension.</strong> Tries the best coupon codes automatically at checkout, at 20,000+ stores.</p>
+        <p class="stores">
+          <a class="store" href="https://chromewebstore.google.com/detail/dontpayfull-automatic-cou/jfoanacamkbfibjbidbmeobmnndfgpca"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#chrome"/></svg>Chrome</a>
+          <a class="store" href="https://microsoftedge.microsoft.com/addons/detail/dontpayfull-automatic-c/iddgmfjgflgejeafamidllamlmchohjb"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#edge"/></svg>Edge</a>
+        </p>
+      </div>
+      <div class="channel">
+        <p><strong>Mobile app.</strong> Coupon codes and deals for your favorite stores, on your phone.</p>
+        <p class="stores">
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.shopilo.app"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#google-play"/></svg>Google Play</a>
+          <a class="store" href="https://apps.apple.com/app/shopilo-coupon-codes-deals/id6795835532"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#apple"/></svg>App Store</a>
+        </p>
+      </div>
+    </article>
+    <article class="product">
+      <div class="product-head">
+        <img src="/labs/img/amazon-tools.webp" width="56" height="56" alt="">
+        <div><h3>Amazon Shopping Tools</h3><p>Deals, gifts and best sellers on Amazon.</p></div>
+      </div>
+      <div class="channel">
+        <p><strong>Browser extension.</strong> Discounts, deals, gift ideas and best sellers, one click away.</p>
+        <p class="stores">
+          <a class="store" href="https://chromewebstore.google.com/detail/amazon-shopping-tools/ffggjdmejdnacmogonkgnhihpfjadbik"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#chrome"/></svg>Chrome</a>
+          <a class="store" href="https://addons.mozilla.org/en-US/firefox/addon/amazon-shopping-tools/"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#firefox"/></svg>Firefox</a>
+          <a class="store" href="https://microsoftedge.microsoft.com/addons/detail/amazon-shopping-tools/jfbhelnpphaoafdllliahnjcbnnlbjom"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#edge"/></svg>Edge</a>
+          <a class="store" href="https://addons.opera.com/en/extensions/details/amazon-shopping-tools/"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#opera"/></svg>Opera</a>
+        </p>
+      </div>
+      <div class="channel">
+        <p><strong>On the web.</strong> The same tools, no install needed.</p>
+        <ul class="web-tools">
+          <li><a href="https://www.dontpayfull.com/page/amazon-discount-finder">Discount Finder</a><span>the best current deals</span></li>
+          <li><a href="https://www.dontpayfull.com/page/amazon-gift-finder">Gift Finder</a><span>gift ideas in one click</span></li>
+          <li><a href="https://www.dontpayfull.com/page/amazon-best-sellers">Best Sellers</a><span>the 100 most-ordered products in a category</span></li>
+        </ul>
+      </div>
+    </article>
   </div>
+  <p class="disclosure">All of these are free. The shopping tools are how DontPayFull pays for itself: some of them earn us a commission when you buy through their links, at no extra cost to you.</p>
+  <p class="next"><a class="store" href="https://github.com/dontpayfull"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#github"/></svg>Our open source work on GitHub</a></p>
 </div></section>
 </main>
 
