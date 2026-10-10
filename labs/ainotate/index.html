@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AInotate: annotated screenshots for AI agents | DontPayFull Labs</title>
+<meta name="description" content="AInotate lets AI agents answer &quot;where is it?&quot; with an annotated screenshot: numbered steps, arrows, boxes and labels. MCP server, CLI and agent skill for Claude, Codex, Gemini CLI and Cursor. Free and open source.">
+<link rel="canonical" href="https://www.dontpayfull.com/labs/ainotate/">
+<link rel="icon" href="/labs/ainotate/img/ainotate-icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DontPayFull Labs">
+<meta property="og:title" content="AInotate: annotated screenshots for AI agents">
+<meta property="og:description" content="Your agent shows you the button instead of describing where it is.">
+<meta property="og:url" content="https://www.dontpayfull.com/labs/ainotate/">
+<meta property="og:image" content="https://www.dontpayfull.com/labs/ainotate/img/og-hn.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hacker News annotated by AInotate: arrows to Discussion and Post a link, and a numbered Sign in step">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.dontpayfull.com/labs/ainotate/img/og-hn.jpg">
+<link rel="preload" href="/labs/assets/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/labs/assets/labs.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AInotate",
+  "description": "Annotated screenshots for AI agents: numbered steps, arrows, boxes and labels, with best-effort redaction of emails and tokens on web shots.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "macOS; Windows (experimental); Linux (experimental)",
+  "softwareRequirements": "Python 3.10 or later",
+  "url": "https://www.dontpayfull.com/labs/ainotate/",
+  "downloadUrl": "https://pypi.org/project/ainotate/",
+  "softwareVersion": "0.1.8",
+  "license": "https://spdx.org/licenses/AGPL-3.0-or-later.html",
+  "image": "https://www.dontpayfull.com/labs/ainotate/img/og-hn.jpg",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "DontPayFull", "url": "https://www.dontpayfull.com"},
+  "sameAs": ["https://github.com/dontpayfull/AInotate", "https://pypi.org/project/ainotate/"]
+}
+</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/labs/ainotate/"><img class="wordmark" src="/labs/ainotate/img/ainotate-logo.svg" width="126" height="30" alt="AInotate"><small>by DontPayFull Labs</small></a>
+  <nav>
+    <a href="#install">Install</a>
+    <a class="hide-sm" href="#get-started">Get started</a>
+    <a href="https://github.com/dontpayfull/AInotate">GitHub</a>
+  </nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <h1>Annotated screenshots for AI agents,<br><span>not directions in words.</span></h1>
+  <p class="lead">Ask your agent where a setting is. It sends back the screen with the button boxed and numbered, and tells you to click&nbsp;1. An MCP server, a command line tool and an agent skill, for web pages, windows and images you already have.</p>
+  <div class="cta">
+    <div class="callout" aria-hidden="true">
+      <span>Start here</span>
+      <svg viewBox="0 0 110 60"><path class="draw" d="M4 6 C 40 4, 78 18, 100 46"/><path class="head" d="M86 44 L101 48 L99 32"/></svg>
+    </div>
+    <a class="btn primary" href="#install" style="position:relative"><span class="step-badge" aria-hidden="true">1</span>Install</a>
+    <a class="btn ghost" href="https://github.com/dontpayfull/AInotate">View on GitHub</a>
+  </div>
+  <p class="note">Free and open source · runs on your machine · Claude, Codex, Gemini CLI and Cursor</p>
+  <img class="shot" src="/labs/ainotate/img/skitch-arrows.webp" width="1600" height="564" alt="Hacker News with hand-drawn style arrows pointing at Discussion and Post a link, and a numbered Sign in step" fetchpriority="high">
+</div>
+
+<section><div class="wrap">
+  <h2>Words versus a picture</h2>
+  <p class="sub">The same question, answered two ways.</p>
+  <div class="versus">
+    <div class="chat">
+      <h3>Without AInotate</h3>
+      <p class="bubble you">Where do I change the text size on Wikipedia?</p>
+      <p class="bubble agent long">Look at the top right of the article. There is an Appearance menu, usually next to the Tools menu, though on some layouts it sits in the sidebar instead. Inside it, under Text, pick Standard, Small or Large. If you don't see it, try widening the window or check the hamburger menu.</p>
+    </div>
+    <div class="chat">
+      <h3>With AInotate</h3>
+      <p class="bubble you">Where do I change the text size on Wikipedia?</p>
+      <div class="bubble agent"><img src="/labs/ainotate/img/step-by-step.webp" width="1524" height="1302" alt="Wikipedia with the Appearance panel open and three numbered steps: Bigger text, Full width, Dark mode" loading="lazy">Open <strong>Appearance</strong> and pick <strong>1</strong> for bigger text. <strong>2</strong> and <strong>3</strong> set full width and dark mode.</div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What people use it for</h2>
+  <div class="uses">
+    <div class="use">
+      <figure><img src="/labs/ainotate/img/phone.webp" width="1322" height="1412" alt="Wikipedia on a phone with step 1 on the Menu button and step 2 on Search" loading="lazy"></figure>
+      <div><h3>“Where is it?”</h3><p>Settings, menus and buttons hidden behind icons. The agent answers with the screen itself, the control boxed and numbered.</p></div>
+    </div>
+    <div class="use">
+      <figure><img src="/labs/ainotate/img/bug-report.webp" width="1600" height="880" alt="Two tables: the correctly sorted one marked in green, the unsorted one marked in red" loading="lazy"></figure>
+      <div><h3>Bug reports and tickets</h3><p>What is wrong in red, what is right in green. Web shots made with <code>shoot</code> black out emails and tokens before you see them.</p></div>
+    </div>
+    <div class="use">
+      <figure><img src="/labs/ainotate/img/before-after.webp" width="1280" height="1374" alt="Before and after shots of the same controls, one above the other" loading="lazy"></figure>
+      <div><h3>Guides and changelogs</h3><p>One image per step, exported as a Markdown, HTML or PDF guide. Before and after plates when the UI changes.</p></div>
+    </div>
+    <div class="use">
+      <figure><img src="/labs/ainotate/img/loupe-keys.webp" width="1600" height="855" alt="A magnifier over a small control and a keyboard shortcut drawn as keycaps" loading="lazy"></figure>
+      <div><h3>“Your turn”</h3><p>Permission switches, 2FA codes, payments: the agent does not click for you. It shows what to press and says what the click does.</p></div>
+    </div>
+  </div>
+  <div class="aside-shot">
+    <figure><img src="/labs/ainotate/img/placement.webp" width="1600" height="252" alt="The same Hacker News labels placed at a fixed spot, covering text, and placed by AInotate in free space with arrows" loading="lazy"></figure>
+    <p><strong>Labels stay off the content.</strong> AInotate maps the text and icons on the page and puts each label in free space near its target, with an arrow that curves around what it would cover. Left: a fixed offset. Right: AInotate.</p>
+  </div>
+</div></section>
+
+<section id="install"><div class="wrap">
+  <h2>Install</h2>
+  <p class="sub">The plugins bring two parts together: the skill, which tells the agent when and how to annotate, and the MCP server, which does the capturing and drawing. The plugin installs need <a href="https://docs.astral.sh/uv/">uv</a>.</p>
+  <table class="install">
+    <caption class="sr-only">How to install AInotate in each agent</caption>
+    <tr><th scope="row">Claude Code</th><td><code>/plugin marketplace add dontpayfull/AInotate</code><br>then <code>/plugin install ainotate@ainotate</code></td></tr>
+    <tr><th scope="row">Cowork</th><td>Customize &gt; Plugins &gt; Add marketplace &gt; <code>dontpayfull/AInotate</code>, then install AInotate. Keep the Claude desktop app open while a task uses it.</td></tr>
+    <tr><th scope="row">Claude Desktop</th><td>Open <code>ainotate-&lt;version&gt;.mcpb</code> from the <a href="https://github.com/dontpayfull/AInotate/releases/latest">latest release</a>. Nothing to install first.</td></tr>
+    <tr><th scope="row">Codex</th><td><code>codex plugin marketplace add dontpayfull/AInotate</code><br>then <code>codex plugin add ainotate@ainotate</code></td></tr>
+    <tr><th scope="row">Gemini CLI</th><td><code>gemini extensions install https://github.com/dontpayfull/AInotate</code></td></tr>
+    <tr><th scope="row">Cursor, Cline and other MCP clients</th><td>Add the server below, then the skill with <code>npx skills add dontpayfull/AInotate</code>. VS Code finds it in the MCP Registry as <code>io.github.dontpayfull/ainotate</code>.</td></tr>
+    <tr><th scope="row">Command line</th><td><code>brew install dontpayfull/tap/ainotate</code> (macOS)<br>or <code>pipx install "ainotate[all]"</code> (Python 3.10+)</td></tr>
+  </table>
+<pre><code>{"mcpServers": {"ainotate": {"command": "uvx", "args": ["--from", "ainotate[all]", "ainotate", "mcp"]}}}</code></pre>
+  <p class="small">With the command line tool installed, <code>{"command": "ainotate", "args": ["mcp"]}</code> works too, and <code>ainotate install-skill</code> adds the skill for Claude Code and Codex. Config paths for every client: <a href="https://github.com/dontpayfull/AInotate/blob/main/skills/ainotate/references/mcp.md">MCP setup</a>.</p>
+</div></section>
+
+<section id="get-started"><div class="wrap">
+  <h2>Get started</h2>
+  <ol class="steps" role="list">
+    <li>
+      <h3><span class="sr-only">Step 1: </span>Check the machine</h3>
+      <p>Ask your agent to run the <code>doctor</code> tool, or run <code>ainotate doctor</code>. It checks screen capture permission, the browser and OCR, and prints the exact fix for anything missing, such as the command that downloads Chromium for web capture (<code>python -m playwright install chromium</code>).</p>
+    </li>
+    <li>
+      <h3><span class="sr-only">Step 2: </span>Ask your agent</h3>
+      <p>Try <em>“Show me where to switch Wikipedia to dark mode.”</em> The agent captures the page, finds the control, draws a numbered step, looks at the result and sends you the image. With the skill installed it also does this on its own whenever an answer depends on where something is on the screen.</p>
+    </li>
+    <li>
+      <h3><span class="sr-only">Step 3: </span>Or drive it yourself</h3>
+      <p>A shot is a small JSON spec: where to capture and what to mark. Save it as <code>hn.json</code> and run <code>ainotate shoot hn.json --draft</code>.</p>
+<pre><code>{"url": "https://news.ycombinator.com",
+ "frame": {"chrome": "browser"},
+ "marks": [
+  {"type": "step", "n": 1, "target": {"text": "new", "exact": true}, "label": "Newest"},
+  {"type": "step", "n": 2, "target": {"text": "login"}, "label": "Sign in"}]}</code></pre>
+      <p>Mark types: <code>step</code>, <code>box</code>, <code>arrow</code>, <code>click</code>, <code>highlight</code>, <code>spotlight</code>, <code>magnify</code>, <code>keys</code>, <code>text</code> and <code>redact</code>; the first four take a label. <code>blur</code> and <code>pixelate</code> only tone down clutter and are never used for secrets. Every command, the full spec, the Python API and exit codes are in the <a href="https://github.com/dontpayfull/AInotate#readme">README</a>.</p>
+    </li>
+  </ol>
+  <p class="small">Updating: <code>brew upgrade ainotate</code>, <code>pipx upgrade ainotate</code>, <code>/plugin marketplace update ainotate</code> in Claude Code, or the newer <code>.mcpb</code> for Claude Desktop. Stuck? Open an issue on <a href="https://github.com/dontpayfull/AInotate/issues">GitHub</a> with the output of <code>doctor</code>.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Privacy</h2>
+  <p class="sub">DontPayFull never receives your screenshots. AInotate runs on your machine and hands its images to the agent you use. If that agent is Claude, Codex, Gemini or Cursor, the image becomes part of the conversation and goes to that provider under their terms.</p>
+  <ul class="redacted">
+    <li>No account, no telemetry, no server of ours. The only network traffic is loading the pages you capture and the downloads you install.</li>
+    <li>Web shots made with <code>shoot</code> black out emails, phone numbers, cards, API keys and tokens. For other images, turn it on with <code>--privacy auto</code>.</li>
+    <li>Solid blocks only, like the ones beside this list. Blur can be reversed, so it is never used to hide data.</li>
+    <li>Detection is best effort and raw captures are not redacted. The agent checks a preview before it sends the final image; look at it too.</li>
+  </ul>
+  <p><a href="/labs/ainotate/legal/#privacy">Full privacy notes</a></p>
+</div></section>
+
+<section><div class="wrap narrow">
+  <div class="story">
+    <h2>Why we built it</h2>
+    <p>At <a href="https://www.dontpayfull.com">DontPayFull</a> we run AI agents every day: in support, in admin panels, in our own tools. Whenever someone asked one of them where something was, it answered with a paragraph. We kept wanting the screenshot instead, so we wrote the tool that makes it, and then made it public.</p>
+    <figure><img src="/labs/ainotate/img/dontpayfull.webp" width="1600" height="746" alt="The DontPayFull home page annotated by AInotate: step 1 on Log in, step 2 on Join now, arrows to the store search and Saving tips" loading="lazy"><figcaption>Our own home page, annotated the way we use it in support replies.</figcaption></figure>
+    <p>It is maintained by the DontPayFull engineering team. Issues and pull requests are welcome on <a href="https://github.com/dontpayfull/AInotate">GitHub</a>.</p>
+  </div>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap narrow">
+  <h2>Questions</h2>
+  <h3>Does DontPayFull see my screenshots?</h3>
+  <p>No. Capture, OCR, redaction and drawing happen on your machine and nothing is sent to us. The images do reach your AI agent, and through it the agent's provider, the same way anything else you share in that chat does.</p>
+  <h3>Which agents does it work with?</h3>
+  <p>Claude Code, Cowork, Claude Desktop, Codex, Gemini CLI, Cursor and any client that speaks MCP. It also works on its own from the command line and from Python.</p>
+  <h3>Which operating systems?</h3>
+  <p>macOS is the tested platform. Windows and Linux are experimental: implemented and unit-tested with mocks, not yet verified on real machines. Targeting app UI elements works on macOS only, and Linux screen capture needs X11.</p>
+  <h3>What does it cost, and what is the license?</h3>
+  <p>Nothing. It is free software under the <a href="https://github.com/dontpayfull/AInotate/blob/main/LICENSE">GNU AGPL v3.0 or later</a>. If you run a modified AInotate as a network service, the AGPL requires you to offer its source to the users of that service.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 DontPayFull · AInotate is made by the DontPayFull team</span>
+  <nav>
+    <a href="/labs/">Labs</a>
+    <a href="/labs/ainotate/legal/#privacy">Privacy</a>
+    <a href="/labs/ainotate/legal/#terms">Terms</a>
+    <a href="https://github.com/dontpayfull/AInotate">GitHub</a>
+  </nav>
+</div></footer>
+</body>
+</html>

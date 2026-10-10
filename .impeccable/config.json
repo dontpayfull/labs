@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-10T08:22:43.347Z",
+        "reason": "brand: Inter is AInotate's own font (bundled in the tool, logo outlined from Inter ExtraBold); keeps site and product consistent"
+      }
+    ]
+  }
+}
