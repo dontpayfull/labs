@@ -215,3 +215,14 @@ section[id] { scroll-margin-top: 64px; }
 
 /* grid and flex children may shrink below their content (long code lines scroll inside pre) */
 ol.steps li, .use > *, .versus > *, .feature > *, .aside-shot > * { min-width: 0; }
+
+/* labs hub: other DontPayFull products, quieter than the featured tool */
+section.also { padding-top: 48px; }
+section.also h2 { font-size: 24px; margin-bottom: 20px; }
+.also-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; border-top: 1px solid var(--line); }
+.also-item { padding: 22px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.also-item h3 { margin: 0 0 4px; font-size: 19px; letter-spacing: -0.01em; }
+.also-item p { margin: 0; color: var(--muted); }
+.also-item .stores { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+.also-item .btn { padding: 9px 16px; font-size: 15px; }
+@media (max-width: 860px) { .also-list { grid-template-columns: 1fr; } }
