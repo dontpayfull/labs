@@ -247,3 +247,19 @@ a.store:hover { border-color: var(--ink); background: var(--paper); }
 .disclosure { color: var(--muted); font-size: 14px; margin: 28px 0 0; max-width: 760px; }
 .next { margin-top: 20px !important; }
 @media (max-width: 860px) { .products { grid-template-columns: 1fr; } .product { padding: 22px; } }
+
+/* examples table: written as / reads as / why */
+table.examples th, table.examples td { width: auto; }
+table.examples thead th { font-size: 13px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+table.examples td:first-child { padding-left: 0; }
+table.examples td:nth-child(2) { font-weight: 600; white-space: nowrap; }
+table.examples td:nth-child(3) { color: var(--muted); }
+@media (max-width: 720px) { table.examples td:nth-child(2) { white-space: normal; } }
+section#limits ul { padding-left: 20px; margin: 0; display: grid; gap: 8px; }
+table.examples thead th { padding-left: 12px; }
+table.examples thead th:first-child { padding-left: 0; }
+@media (min-width: 721px) { .faq p code, ol.steps p code { white-space: nowrap; } }
+.feature + .feature { margin-top: 24px; }
+.feature h3.head a { color: var(--ink); text-decoration: none; }
+@media (max-width: 720px) { table.examples { display: block; overflow-x: auto; } }
+table.install + ol.steps { margin-top: 44px; }

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global Price Parser: read prices and currencies from text or HTML | DontPayFull Labs</title>
+<meta name="description" content="Free TypeScript library that reads prices in any country: 1.299,00 €, CHF 1'299.–, ₹1,23,456, $25 on a Canadian shop. The exact amount, the ISO currency, and an honest flag when it is not sure.">
+<link rel="canonical" href="https://www.dontpayfull.com/labs/global-price-parser/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DontPayFull Labs">
+<meta property="og:title" content="Global Price Parser: read prices from any country">
+<meta property="og:description" content="Text or HTML in, the exact amount and the ISO currency out. TypeScript, zero dependencies.">
+<meta property="og:url" content="https://www.dontpayfull.com/labs/global-price-parser/">
+<meta property="og:image" content="https://www.dontpayfull.com/labs/global-price-parser/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Five prices written the local way, each read as an amount and an ISO currency code">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.dontpayfull.com/labs/global-price-parser/img/og.jpg">
+<link rel="preload" href="/labs/assets/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/labs/assets/labs.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["SoftwareSourceCode", "SoftwareApplication"],
+      "name": "Global Price Parser",
+      "alternateName": "global-price-parser",
+      "description": "TypeScript library that reads prices from text or HTML in any country and returns the exact amount, the ISO 4217 currency and a flag when the currency is not certain.",
+      "url": "https://www.dontpayfull.com/labs/global-price-parser/",
+      "codeRepository": "https://github.com/dontpayfull/global-price-parser",
+      "programmingLanguage": ["TypeScript", "Python", "PHP"],
+      "runtimePlatform": ["Node.js", "web browsers", "Python", "PHP"],
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "license": "https://spdx.org/licenses/Apache-2.0.html",
+      "image": "https://www.dontpayfull.com/labs/global-price-parser/img/og.jpg",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "publisher": {"@type": "Organization", "name": "DontPayFull", "url": "https://www.dontpayfull.com"},
+      "sameAs": ["https://github.com/dontpayfull/global-price-parser", "https://www.npmjs.com/package/global-price-parser"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "DontPayFull", "item": "https://www.dontpayfull.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Labs", "item": "https://www.dontpayfull.com/labs/"},
+        {"@type": "ListItem", "position": 3, "name": "Global Price Parser", "item": "https://www.dontpayfull.com/labs/global-price-parser/"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/labs/global-price-parser/">Global Price Parser<small>by DontPayFull Labs</small></a>
+  <nav aria-label="Main">
+    <a href="#use">Install</a>
+    <a class="hide-sm" href="#faq">Questions</a>
+    <a class="with-ico" href="https://github.com/dontpayfull/global-price-parser"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#github"/></svg>GitHub</a>
+  </nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <h1>Read prices from any country,<br><span>the way people write them.</span></h1>
+  <p class="lead">A TypeScript library for text and HTML. It returns the exact amount and the ISO currency, and tells you when the currency is a guess.</p>
+  <div class="cta">
+    <a class="btn primary" href="#use">Install</a>
+    <a class="btn ghost" href="https://github.com/dontpayfull/global-price-parser"><svg class="ico" aria-hidden="true"><use href="/labs/assets/icons.svg#github"/></svg>View on GitHub</a>
+  </div>
+  <p class="note">Free and open source · zero dependencies · no AI, no network</p>
+  <img class="shot" src="/labs/global-price-parser/img/examples.webp" width="1200" height="620" alt="1.299,00 € reads as 1299.00 EUR, CHF 1'299.– as 1299.00 CHF, ₹1,23,456 as 123456.00 INR, 699,- on a Norwegian shop as 699.00 NOK, $25 on a Canadian shop as 25.00 CAD" fetchpriority="high">
+</div>
+
+<section id="examples"><div class="wrap">
+  <h2>What it reads</h2>
+  <p class="sub">Prices as shops write them, and what the library returns. A question mark means the currency is the most likely one, not a certain one.</p>
+  <table class="install examples">
+    <caption class="sr-only">Price texts and how global-price-parser reads them</caption>
+    <thead><tr><th scope="col">Written as</th><th scope="col">Reads as</th><th scope="col">Why</th></tr></thead>
+    <tbody>
+      <tr><td><code>1.299,00 €</code></td><td>1299.00 EUR</td><td>the € symbol</td></tr>
+      <tr><td><code>CHF 1'299.–</code></td><td>1299.00 CHF</td><td>the code; <code>.–</code> means no cents</td></tr>
+      <tr><td><code>12,-</code> &nbsp; <code>3.999.-</code> &nbsp; <code>5 990.-</code></td><td>12.00 &nbsp; 3999.00 &nbsp; 5990.00</td><td>whole amounts written with a dash</td></tr>
+      <tr><td><code>₹1,23,456</code></td><td>123456.00 INR</td><td>Indian digit grouping</td></tr>
+      <tr><td><code>59.900 د.ك</code></td><td>59.900 KWD</td><td>the dinar has three decimals</td></tr>
+      <tr><td><code>٣٤٫٥٠ ر.س</code></td><td>34.50 SAR</td><td>Arabic-Indic digits</td></tr>
+      <tr><td><code>$25</code> on a <code>.ca</code> shop</td><td>25.00 CAD</td><td>the domain</td></tr>
+      <tr><td><code>$25</code> alone</td><td>25.00 USD?</td><td>most likely; could be CAD, AUD and 27 more</td></tr>
+      <tr><td><code>kr 299</code> on a Shopify shop set to NOK</td><td>299.00 NOK</td><td>the shop's active currency</td></tr>
+      <tr><td><code>¥12,800</code></td><td>12800 JPY?</td><td>could be CNY; yen has no decimals</td></tr>
+      <tr><td><code>&lt;del&gt;$79.99&lt;/del&gt; $59&lt;sup&gt;99&lt;/sup&gt;</code></td><td>59.99 USD?, and 79.99 marked struck</td><td>the old price is flagged; cents in <code>&lt;sup&gt;</code></td></tr>
+      <tr><td><code>29,99 €/kg</code> &nbsp; <code>199 lei/lună</code></td><td>29.99 EUR per kg, 199.00 RON? per month</td><td>units in every CLDR language; <code>lei</code> could be MDL</td></tr>
+      <tr><td><code>1.234</code> with no currency</td><td>1234.00, or 1.234</td><td>both readings are returned</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Every row is the library's real output. It was also checked on 39 product pages from shops in 26 countries.</p>
+</div></section>
+
+<section id="use"><div class="wrap">
+  <h2>Install and use</h2>
+  <p class="sub">TypeScript for Node.js 18 or later and browsers, plus Python and PHP ports that read the same data and give the same results.</p>
+  <table class="install">
+    <caption class="sr-only">How to install Global Price Parser in each language</caption>
+    <tr><th scope="row">JavaScript, TypeScript</th><td><code>npm install global-price-parser</code></td></tr>
+    <tr><th scope="row">Python 3.9+</th><td><code>pip install global-price-parser</code></td></tr>
+    <tr><th scope="row">PHP 8.1+</th><td><code>composer require dontpayfull/global-price-parser</code></td></tr>
+  </table>
+  <ol class="steps" role="list">
+    <li>
+      <h3><span class="sr-only">Step 1: </span>Read a price from text</h3>
+<pre><code>import { parsePrice, parsePrices } from 'global-price-parser'
+
+parsePrice('1.299,00 €')
+// { amount: '1299.00', currency: 'EUR', currencySure: true, ... }
+
+parsePrices('Abo: 9,99 €/Monat, Set ab 1.299,00 €')
+// 9.99 EUR per month, 1299.00 EUR</code></pre>
+    </li>
+    <li>
+      <h3><span class="sr-only">Step 2: </span>Or from HTML and the page around it</h3>
+<pre><code>// an HTML string
+parsePrice('&lt;del&gt;$79.99&lt;/del&gt; &lt;ins&gt;$59&lt;sup&gt;99&lt;/sup&gt;&lt;/ins&gt;')
+
+// a DOM element, in the browser or with jsdom
+parsePrice(document.querySelector('.product-price'))
+
+// what you know about the shop
+parsePrice('$25', { url: 'https://shop.example.ca/p/1' })
+parsePrice('kr 299', { country: 'NO' })</code></pre>
+      <p>With a DOM element it also reads the signals of its page. With a string, pass the page as <code>{ page: html }</code>.</p>
+    </li>
+  </ol>
+  <p class="small">Every option and field is in the <a href="https://github.com/dontpayfull/global-price-parser#readme">README</a>. Python and PHP: <a href="https://github.com/dontpayfull/global-price-parser/tree/main/python#readme">Python README</a>, <a href="https://github.com/dontpayfull/global-price-parser/tree/main/php#readme">PHP README</a>.</p>
+</div></section>
+
+<section id="currency"><div class="wrap">
+  <h2>How it picks the currency</h2>
+  <p class="sub">The symbol next to the number always wins: <code>25 €</code> is EUR on any page. Signals only choose between the currencies a symbol can mean, such as USD, CAD or AUD for <code>$</code>, or SEK, NOK, DKK or ISK for <code>kr</code>.</p>
+  <table class="install">
+    <caption class="sr-only">Currency signals in the order they count</caption>
+    <tr><th scope="row">1. Your options</th><td><code>{ currency: 'CAD' }</code>, <code>{ country: 'NO' }</code>, <code>{ language: 'de-CH' }</code></td></tr>
+    <tr><th scope="row">2. Shop platform</th><td>the active currency in Shopify, BigCommerce, PrestaShop, Magento, VTEX, WooCommerce and Shopware</td></tr>
+    <tr><th scope="row">3. Tracking</th><td><code>dataLayer</code> ecommerce, <code>gtag</code>, Meta pixel, Klaviyo</td></tr>
+    <tr><th scope="row">4. Structured data</th><td>JSON-LD <code>priceCurrency</code>, microdata, <code>og:price:currency</code></td></tr>
+    <tr><th scope="row">5. URL</th><td><code>?currency=CAD</code></td></tr>
+    <tr><th scope="row">6. Country of the page</th><td>Shopify or PrestaShop country, <code>?country=CA</code>, the page's own hreflang, <code>&lt;html lang="en-CA"&gt;</code>, <code>/en-ca/</code> or <code>/ca/fr/</code> in the path, the <code>.ca</code> domain</td></tr>
+    <tr><th scope="row">7. Nothing found</th><td>the most common currency for the symbol, with <code>currencySure: false</code></td></tr>
+  </table>
+  <p class="small">Some signals are left out on purpose because they mislead: the Shopify base currency, <code>og:locale</code>, <code>&lt;html lang&gt;</code> without a country, and domains like <code>.co</code>, <code>.io</code> or <code>.ai</code>. A language without a country in your options, like <code>{ language: 'en' }</code>, only guesses. The result names the signal that decided in <code>decidedBy</code>.</p>
+</div></section>
+
+<section id="limits"><div class="wrap narrow">
+  <h2>Limits</h2>
+  <ul>
+    <li>A separator followed by exactly three digits groups thousands, unless the currency has three decimals: a fuel price like <code>1,799 €/l</code> reads as 1799.00 EUR.</li>
+    <li>Accounting brackets are not read as negative: <code>(15.00)</code> is 15.00.</li>
+    <li>Plain text has no struck prices. In <code>Was $59.99, now $39.99</code> the first price comes first; use HTML, or <code>parsePrices</code> and choose.</li>
+    <li>It does not run the page's JavaScript, convert currencies, or read amounts written in words.</li>
+  </ul>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap narrow">
+  <h2>Questions</h2>
+  <h3>Why not <code>Intl.NumberFormat</code> or a regex?</h3>
+  <p><code>Intl.NumberFormat</code> writes prices but cannot read them back. A regex like <code>/[^0-9.]/g</code> turns <code>1.299,00 €</code> into <code>1.29900</code>. Real pages mix both separators, local symbols and markup.</p>
+  <h3>Why is the amount a string?</h3>
+  <p>So that it stays exact and keeps the currency's decimals: <code>"1299"</code> for JPY, <code>"1299.00"</code> for EUR, <code>"59.900"</code> for KWD. The same amount is also there as a number, in <code>value</code>.</p>
+  <h3>What does <code>currencySure: false</code> mean?</h3>
+  <p>More than one currency was possible and nothing on the page decided. The currency returned is the most common one for that symbol; the others are in <code>otherCurrencies</code>.</p>
+  <h3>Does it use AI or send data anywhere?</h3>
+  <p>No. It is plain code with currency data from Unicode CLDR built in. It makes no network calls, and the same input always gives the same output.</p>
+  <h3>I use price-parser in Python. Is this the same?</h3>
+  <p>It covers the same ground, and adds HTML and the page signals above. It has a Python version too: <code>pip install global-price-parser</code>.</p>
+  <h3>What is the license?</h3>
+  <p><a href="https://github.com/dontpayfull/global-price-parser/blob/main/LICENSE">Apache-2.0</a>, free for commercial use. If it helps you, a mention of <a href="https://www.dontpayfull.com/">DontPayFull</a> is welcome. Issues and pull requests are welcome on <a href="https://github.com/dontpayfull/global-price-parser">GitHub</a>.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 DontPayFull · Global Price Parser is made by the team behind <a href="https://www.dontpayfull.com/">DontPayFull, coupon codes and deals for 20,000+ online stores</a></span>
+  <nav aria-label="Footer">
+    <a href="/labs/">Labs</a>
+    <a href="https://www.npmjs.com/package/global-price-parser">npm</a>
+    <a href="https://github.com/dontpayfull/global-price-parser">GitHub</a>
+  </nav>
+</div></footer>
+</body>
+</html>
